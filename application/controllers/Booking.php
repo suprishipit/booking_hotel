@@ -229,62 +229,8 @@ class Booking extends CI_Controller
         redirect('booking/tranfer2');
     }
 
-    // public function tranfer()
-    // {
-    //     $data['judul'] = 'tranfer';
-    //     $data = $this->ModelBooking->cekData(['email' => $this->session->userdata('email')])->row_array();
 
 
-    //     // $this->form_validation->set_rules('nama_user', 'Masukan Nama', 'required', ['required' => 'Nama belom diisi!!!']);
-    //     $this->form_validation->set_rules('gambar', 'Username', 'required');
-    //     // $this->form_validation->set_rules('gambar', 'Image Gambar', 'required', [
-    //     //     'required' => 'Gambar tidak Boleh Kosong'
-    //     // ]);
-    //     if ($this->form_validation->run() == false) {
-    //         $data['judul'] = 'transfer';
-    //         $this->load->view('user/sisi_user/sidebar', $data);
-    //         $this->load->view('booking/image', $data);
-    //         $this->load->view('dasboard/footer2');
-    //     } else {
-    //         $nama = $this->input->post('nama', true);
-    //         $email = $this->input->post('email', true);
-
-    //         echo "Gambar ada";
-    //         exit();
-
-    //         $upload_image = $_FILES['image']['name'];
-    //         if ($upload_image) {
-    //             echo "Gambar Ada";
-    //             exit();
-    //             $config['upload_path'] = './assets/img/bukti/';
-    //             $config['allowed_types'] = 'gif|jpg|jpeg|png';
-    //             $config['max_size']     = '3000';
-    //             // $config['max_width'] = '1024';
-    //             // $config['max_height'] = '1000';
-    //             $config['file_name'] = 'pro' . time();
-
-    //             $this->load->library('upload', $config);
-
-    //             if ($this->upload->do_upload('image')) {
-    //                 $gambar_lama = $data['boking']['image'];
-    //                 if ($gambar_lama != 'default.jpg') {
-    //                     unlink(FCPATH . 'assets/img/bukti/' . $gambar_lama);
-    //                 }
-
-    //                 $gambar_baru = $this->upload->data('file_name');
-    //                 $this->db->set('image', $gambar_baru);
-    //             } else {
-    //             }
-    //         }
-
-    //         $this->db->set('nama', $nama);
-    //         $this->db->where('email', $email);
-    //         $this->db->update('boking');
-
-    //         $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-message" role="alert">selamat berhasil upload </div>');
-    //         redirect('tranfer2');
-    //     }
-    // }
 
     public function print()
     {

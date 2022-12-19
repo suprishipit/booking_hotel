@@ -64,7 +64,6 @@
                                             <td><?= $b['harga']; ?></td>
                                             <td><?= $b['total']; ?></td>
                                             <td><?= $b['image']; ?></td>
-                                            <td> <a href="<?= base_url(''); ?>" class="text text-white btn btn-info ml-3 my-3"><i class="fas fa-user-edit"></i> cek out</a></td>
                                             <td> <a href="<?= base_url('booking/hapus/') . $b['id_boking']; ?>" class="text text-white btn btn-info ml-3 my-3"><i class="fas fa-trash"></i> Hapus</a></td>
 
                                         </tr>

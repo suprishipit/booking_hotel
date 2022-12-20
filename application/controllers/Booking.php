@@ -86,6 +86,7 @@ class Booking extends CI_Controller
                 'diskon' => $this->input->post('diskon', true),
                 'total' => $this->input->post('total', true),
                 'image' => 'default.jpg',
+                'nokamar' => '0',
 
             ];
 
@@ -132,6 +133,7 @@ class Booking extends CI_Controller
                 'diskon' => $this->input->post('diskon', true),
                 'total' => $this->input->post('total', true),
                 'image' => 'default.jpg',
+                'nokamar' => '0',
 
             ];
 
@@ -178,6 +180,7 @@ class Booking extends CI_Controller
                 'total' => $this->input->post('total', true),
                 'diskon' => $this->input->post('diskon', true),
                 'image' => 'default.jpg',
+                'nokamar' => '0',
 
             ];
 
@@ -228,7 +231,6 @@ class Booking extends CI_Controller
         $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-message" role="alert">selamat berhasil upload </div>');
         redirect('booking/tranfer2');
     }
-
 
 
 

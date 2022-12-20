@@ -15,11 +15,7 @@
                                 <?= $this->session->flashdata('pesan'); ?>
 
                                 <form action="<?= base_url('member/ubahPassword'); ?>" method="post">
-                                    <div class="form-group">
-                                        <label for="password_sekarang">email Saat ini</label>
-                                        <input type="email" class="form-control form-control-user " id="email" name="email" placeholder="masukan Email anda" value="<?= set_value('email'); ?>">
-                                        <?= form_error('email', '<small class="text-danger pl-3">', '</small>'); ?>
-                                    </div>
+
                                     <div class="form-gorup">
                                         <label for="password_sekarang">Password Saat ini</label>
                                         <input type="password" class="form-control" id="password_sekarang" name="password_sekarang">

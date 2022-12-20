@@ -93,7 +93,6 @@ class Member extends CI_Controller
     {
         $data['judul'] = 'Ubah Password';
         $data['user'] = $this->ModelCustamer->cekData(['email' => $this->session->userdata('email')])->row_array();
-        $this->form_validation->set_rules('email', 'Nama Lengkap', 'required', ['required' => 'email Belum Diisi!!']);
 
         $this->form_validation->set_rules('password_sekarang', 'Password Saat ini', 'required|trim', [
             'required' => 'Password saat ini harus diisi'
@@ -113,14 +112,13 @@ class Member extends CI_Controller
 
         if ($this->form_validation->run() == false) {
             $data['judul'] = 'ubah password user';
-            $this->load->view('user/sisi_user/sidebar', $data);
+            $this->load->view('dasboard/sidebar', $data);
             $this->load->view('user/ubah_password', $data);
             $this->load->view('dasboard/footer2');
         } else {
-            $this->input->post('email', true);
             $pwd_skrg = $this->input->post('password_sekarang', true);
             $pwd_baru = $this->input->post('password_baru1', true);
-            if (!password_verify($pwd_skrg, $data['user']['sandi'])) {
+            if (!password_verify($pwd_skrg, $data['user']['password'])) {
                 $this->session->set_flashdata('pesan', '<div class="alert alert-danger alert-message" role="alert">Password Saat ini Salah!!! </div>');
                 redirect('member/ubahPassword');
             } else {
@@ -131,9 +129,9 @@ class Member extends CI_Controller
                     //password ok
                     $password_hash = password_hash($pwd_baru, PASSWORD_DEFAULT);
 
-                    $this->db->set('sandi', $password_hash);
+                    $this->db->set('password', $password_hash);
                     $this->db->where('email', $this->session->userdata('email'));
-                    $this->db->update('usr');
+                    $this->db->update('user');
 
                     $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-message" role="alert">Password Berhasil diubah</div>');
                     redirect('member/ubahPassword');
